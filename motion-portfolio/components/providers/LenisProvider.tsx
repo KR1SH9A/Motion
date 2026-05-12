@@ -1,13 +1,21 @@
 "use client";
 
 import Lenis from "lenis";
-import { useEffect } from "react";
+import { createContext, useContext, useEffect, useState } from "react";
 
 import { ScrollTrigger, gsap } from "@/lib/gsap";
 
+const LenisContext = createContext<Lenis | null>(null);
+
+export function useLenis() {
+  return useContext(LenisContext);
+}
+
 export function LenisProvider({ children }: { children: React.ReactNode }) {
+  const [lenis, setLenis] = useState<Lenis | null>(null);
+
   useEffect(() => {
-    const lenis = new Lenis({
+    const instance = new Lenis({
       duration: 1.1,
       lerp: 0.1,
       smoothWheel: true,
@@ -16,24 +24,24 @@ export function LenisProvider({ children }: { children: React.ReactNode }) {
       // (and it is by default — we don't set 'smooth' anywhere).
     });
 
-    // Forward every Lenis scroll event to ScrollTrigger so pinned timelines
-    // stay perfectly in sync with the smoothed scroll position.
     const onScroll = () => ScrollTrigger.update();
-    lenis.on("scroll", onScroll);
+    instance.on("scroll", onScroll);
 
-    // Drive Lenis from gsap.ticker (single shared RAF loop across the app).
     const tick = (time: number) => {
-      lenis.raf(time * 1000);
+      instance.raf(time * 1000);
     };
     gsap.ticker.add(tick);
     gsap.ticker.lagSmoothing(0);
 
+    setLenis(instance);
+
     return () => {
       gsap.ticker.remove(tick);
-      lenis.off("scroll", onScroll);
-      lenis.destroy();
+      instance.off("scroll", onScroll);
+      instance.destroy();
+      setLenis(null);
     };
   }, []);
 
-  return <>{children}</>;
+  return <LenisContext.Provider value={lenis}>{children}</LenisContext.Provider>;
 }

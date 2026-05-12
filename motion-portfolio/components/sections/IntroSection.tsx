@@ -3,6 +3,8 @@
 import { motion } from "motion/react";
 import { ArrowRight, CodeXml } from "lucide-react";
 
+import { useLenis } from "@/components/providers/LenisProvider";
+
 const SOURCE_CODE_URL = "https://github.com/KR1SH9A/Motion";
 const PROJECTS_URL = "https://dotogether.purpl.online/";
 
@@ -23,6 +25,8 @@ const lineVariants = {
 };
 
 export function IntroSection() {
+  const lenis = useLenis();
+
   return (
     <section
       id="intro"
@@ -85,16 +89,17 @@ export function IntroSection() {
                 aria-hidden
               />
             </a>
-            <a
-              href="#example"
-              className="inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background/90 px-5 py-3 text-sm font-medium text-foreground backdrop-blur-md transition-colors hover:bg-foreground/[0.04] focus-visible:outline-2 focus-visible:outline-foreground/40 focus-visible:outline-offset-2"
+            <button
+              type="button"
+              onClick={() => lenis?.scrollTo("#example")}
+              className="group inline-flex items-center gap-2 rounded-full border border-foreground/15 bg-background/90 px-5 py-3 text-sm font-medium text-foreground backdrop-blur-md transition-colors hover:bg-foreground/[0.04] focus-visible:outline-2 focus-visible:outline-foreground/40 focus-visible:outline-offset-2"
             >
               See it scroll
               <ArrowRight
                 className="size-4 -rotate-90 transition-transform group-hover:translate-y-0.5"
                 aria-hidden
               />
-            </a>
+            </button>
             <a
               href={SOURCE_CODE_URL}
               target="_blank"
