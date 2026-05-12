@@ -1,7 +1,0 @@
-{
-  "name": "motion-monorepo",
-  "private": true,
-  "workspaces": [
-    "motion-portfolio"
-  ]
-}

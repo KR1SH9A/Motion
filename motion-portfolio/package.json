@@ -3,12 +3,11 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "predev": "node scripts/copy-frames.mjs",
     "dev": "next dev",
-    "prebuild": "node scripts/copy-frames.mjs",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "frames:sync": "node scripts/copy-frames.mjs"
   },
   "dependencies": {
     "@base-ui/react": "^1.4.1",

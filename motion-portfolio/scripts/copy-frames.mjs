@@ -11,8 +11,11 @@ const DEST_DIR = resolve(PROJECT_ROOT, "public", "frames");
 const TOTAL_FRAMES = 162;
 
 if (!existsSync(SOURCE_DIR)) {
-  console.error(`[copy-frames] source directory not found: ${SOURCE_DIR}`);
-  process.exit(1);
+  console.warn(
+    `[copy-frames] source directory not found at ${SOURCE_DIR} — skipping. ` +
+      `Frames already in public/frames/ are used as-is.`,
+  );
+  process.exit(0);
 }
 
 await mkdir(DEST_DIR, { recursive: true });
