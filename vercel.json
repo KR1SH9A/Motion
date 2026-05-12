@@ -1,0 +1,8 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "nextjs",
+  "installCommand": "npm install --prefix motion-portfolio",
+  "buildCommand": "npm run build --prefix motion-portfolio",
+  "outputDirectory": "motion-portfolio/.next",
+  "devCommand": "npm run dev --prefix motion-portfolio"
+}
