@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# generated frame mirror (re-created by scripts/copy-frames.mjs)
+/public/frames/
+
 # production
 /build
 
