@@ -13,7 +13,8 @@
   --font-sans: var(--font-sans);
   --font-mono: var(--font-geist-mono);
   --font-serif: var(--font-serif);
-  --font-display: var(--font-display);
+  /* TODO(apfel): swap to a local --font-display once ApfelGrotezk-*.woff2 land in public/fonts/ */
+  --font-display: var(--font-serif);
   --font-heading: var(--font-display);
   --color-sidebar-ring: var(--sidebar-ring);
   --color-sidebar-border: var(--sidebar-border);
@@ -150,7 +151,6 @@
   h5,
   h6 {
     font-family: var(--font-display);
-    font-feature-settings: "ss01", "ss02";
     letter-spacing: -0.02em;
   }
   :focus-visible {
