@@ -43,7 +43,7 @@ export function HoverGrid({
               <motion.span
                 aria-hidden
                 layoutId="hover-backdrop"
-                className="absolute inset-0 rounded-2xl bg-foreground/[0.045]"
+                className="absolute inset-0 rounded-2xl bg-brand-soft ring-1 ring-brand/15"
                 initial={{ opacity: 0 }}
                 animate={{
                   opacity: 1,
@@ -59,7 +59,7 @@ export function HoverGrid({
 
           <article className="relative z-10 flex h-full flex-col gap-4 rounded-2xl border border-foreground/10 bg-background/80 p-6 backdrop-blur-md shadow-premium transition-shadow group-hover:shadow-premium-lg">
             <div className="flex items-center justify-between">
-              <span className="inline-flex items-center rounded-full border border-foreground/10 px-2.5 py-0.5 text-[10px] font-medium tracking-[0.16em] text-foreground/55 uppercase">
+              <span className="inline-flex items-center rounded-full border border-brand/25 bg-brand-soft px-2.5 py-0.5 text-[10px] font-medium tracking-[0.16em] text-brand uppercase">
                 {item.badge}
               </span>
               <span className="text-xs text-foreground/35">

@@ -17,15 +17,19 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Motion — A playground to showcase my scroll animations | KR1SH9A",
+  title: {
+    default: "KMotion",
+    template: "%s · KMotion",
+  },
   description:
-    "A learning showcase of scroll-driven cinematic animations built with Next.js, GSAP, Motion, and canvas.",
+    "KMotion — a scroll animation playground by KR1SH9A. Cinematic scroll-driven sequences built with Next.js, GSAP, Motion, Lenis, and a canvas image sequence renderer.",
+  applicationName: "KMotion",
   authors: [{ name: "KR1SH9A" }],
   creator: "KR1SH9A",
   openGraph: {
-    title: "Motion — A playground to showcase my scroll animations",
+    title: "KMotion",
     description:
-      "Scroll-driven cinematic animation built with Next.js 16, GSAP ScrollTrigger, Motion, Lenis, and a high-performance canvas image sequence renderer.",
+      "Scroll-driven cinematic animation by KR1SH9A — built with Next.js 16, GSAP ScrollTrigger, Motion, Lenis, and a high-performance canvas image sequence renderer.",
     type: "website",
   },
 };

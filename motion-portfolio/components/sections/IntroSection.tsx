@@ -36,9 +36,9 @@ export function IntroSection() {
             initial="hidden"
             animate="visible"
             variants={lineVariants}
-            className="inline-flex items-center gap-2 rounded-full border border-foreground/10 bg-background/80 px-3 py-1 text-xs font-medium tracking-[0.18em] text-foreground/70 uppercase backdrop-blur-md"
+            className="inline-flex items-center gap-2 rounded-full border border-brand/25 bg-brand-soft px-3 py-1 text-xs font-medium tracking-[0.18em] text-brand uppercase backdrop-blur-md"
           >
-            <span className="size-1.5 rounded-full bg-foreground/60" />
+            <span className="size-1.5 rounded-full bg-brand" />
             KR1SH9A
           </motion.span>
 
@@ -111,10 +111,10 @@ export function IntroSection() {
             initial="hidden"
             animate="visible"
             variants={lineVariants}
-            className="mt-10 flex items-center gap-3 text-xs tracking-[0.18em] text-foreground/45 uppercase"
+            className="mt-10 flex items-center gap-3 text-xs tracking-[0.18em] text-foreground/55 uppercase"
           >
-            <span className="h-px w-8 bg-foreground/20" />
-            Scroll for the demo
+            <span className="h-px w-8 bg-brand" />
+            <span className="text-brand">Scroll for the demo</span>
           </motion.div>
         </div>
       </div>
