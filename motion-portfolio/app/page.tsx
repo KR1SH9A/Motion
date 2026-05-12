@@ -1,13 +1,15 @@
 import { Footer } from "@/components/sections/Footer";
-import { HeroSequence } from "@/components/hero/HeroSequence";
+import { IntroSection } from "@/components/sections/IntroSection";
 import { MetricsSection } from "@/components/sections/MetricsSection";
+import { ScrollExampleSection } from "@/components/sections/ScrollExampleSection";
 import { ShowcaseSection } from "@/components/sections/ShowcaseSection";
 import { TechStackSection } from "@/components/sections/TechStackSection";
 
 export default function Home() {
   return (
     <main className="relative w-full overflow-hidden">
-      <HeroSequence />
+      <IntroSection />
+      <ScrollExampleSection />
       <TechStackSection />
       <MetricsSection />
       <ShowcaseSection />
